@@ -25,6 +25,6 @@ def hello_world():
     # ... see also: https://www.w3schools.com/python/ref_dictionary_get.asp
     name = request.args.get("name") or "World"
     message = f"Hello, {name}!"
-    return message
-    #return render_template("hello.html", message=message)
+    #return message
+    return render_template("hello.html", message=message, x=5)
 
