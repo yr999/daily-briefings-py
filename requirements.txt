@@ -12,6 +12,8 @@ sendgrid==6.6.0
 
 Flask
 
+gunicorn  #heroku wants it to run web app
+
 #
 # TEST
 #
