@@ -6,7 +6,7 @@ from app.weather_service import get_hourly_forecasts
 
 weather_routes = Blueprint("weather_routes", __name__)
 
-@weather_routes.route("/weather/forecast.json")
+@weather_routes.route("/forecast.json")
 def weather_forecast_api():
     print("WEATHER FORECAST (API)...")
     print("URL PARAMS:", dict(request.args))
@@ -27,7 +27,7 @@ from app.weather_service import get_hourly_forecasts
 
 weather_routes = Blueprint("weather_routes", __name__)
 
-@weather_routes.route("/weather/forecast.json")
+@weather_routes.route("/forecast.json")
 def weather_forecast_api():
     print("WEATHER FORECAST (API)...")
     print("URL PARAMS:", dict(request.args))
@@ -41,12 +41,12 @@ def weather_forecast_api():
     else:
         return jsonify({"message":"Invalid Geography. Please try again."}), 404
 
-@weather_routes.route("/weather/form")
+@weather_routes.route("/form")
 def weather_form():
     print("WEATHER FORM...")
     return render_template("weather_form.html")
 
-@weather_routes.route("/weather/forecast", methods=["GET", "POST"])
+@weather_routes.route("/forecast", methods=["GET", "POST"])
 def weather_forecast():
     print("WEATHER FORECAST...")
 
@@ -66,6 +66,6 @@ def weather_forecast():
         return render_template("weather_forecast.html", country_code=country_code, zip_code=zip_code, results=results)
     else:
         #flash("Geography Error. Please try again!", "danger")
-        return redirect("/weather/form")
+        return redirect("/form")
 
 

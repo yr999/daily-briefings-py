@@ -17,5 +17,5 @@ gunicorn  #heroku wants it to run web app
 #
 # TEST
 #
-
 pytest
+app
